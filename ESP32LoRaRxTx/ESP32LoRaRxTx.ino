@@ -3,8 +3,8 @@
 #include <PubSubClient.h>
 
 // Configurações do Wi-Fi
-const char* ssid = "ESP32_LoRa_AP"; // Nome da rede Wi-Fi 
-const char* password = "12345678";  // Senha da rede Wi-Fi
+const char* ssid = ""; // Nome da rede Wi-Fi 
+const char* password = "";  // Senha da rede Wi-Fi
 
 // Configurações do MQTT
 const char* mqttServer = "IP_DO_RASPBERRY_PI";
