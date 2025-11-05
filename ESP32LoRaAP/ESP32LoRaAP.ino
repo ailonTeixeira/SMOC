@@ -24,7 +24,7 @@ void setup() {
 
   // Inicializa o LoRa
   LoRa.setPins(LORA_SS, LORA_RST, LORA_DIO0);
-  if (!LoRa.begin(915E6)) { // Frequência de 915 MHz (ajuste conforme necessário)
+  if (!LoRa.begin(915E6)) { // Frequência de 915 MHz 
     Serial.println("Falha ao iniciar o LoRa!");
     while (1);
   }
@@ -35,11 +35,11 @@ void setup() {
 }
 
 void loop() {
-  // Verifica se há clientes conectados (ESP32 1 e 2)
-  WiFiClient client = server.available();
-  if (client) {
-    String data = client.readStringUntil('\n');
-    Serial.println("Dados recebidos: " + data);
+  // Verifica se há clientes conectados 
+  WiFiClient clientWiFi = server.available();
+  if (clientWiFi) {
+    float data = clientWiFi.readStringUntil('\n');
+    Serial.println("Dados recebidos via Wi-Fi: " + data);
 
     // Transmite os dados via LoRa
     LoRa.beginPacket();
@@ -47,6 +47,7 @@ void loop() {
     LoRa.endPacket();
     Serial.println("Dados enviados via LoRa: " + data);
 
-    client.stop();
+    clientWiFi.stop();
   }
 }
+
