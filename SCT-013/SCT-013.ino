@@ -26,9 +26,9 @@ void setup() {
 void loop() {
   // Lê o valor do sensor de corrente
   int sensorValue = analogRead(sensorPin);
-  float current = (sensorValue / 4095.0) * 100.0; // Converte para corrente (ajuste conforme necessário)
+  float current = (sensorValue / 4095.0) * 100.0; // Converte para corrente 
 
-  // Envia os dados para o ESP32 LoRa (Receptor)
+  // Envia os dados para o ESP32 LoRa via Wi-fi
   WiFiClient client;
   if (client.connect(serverIP, serverPort)) {
     String data = "ESP32_1:" + String(current); // Formato: "ESP32_1:valor"
@@ -41,3 +41,4 @@ void loop() {
 
   delay(5000); // Espera 5 segundos antes de enviar novamente
 }
+
