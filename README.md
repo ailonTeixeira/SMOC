@@ -21,6 +21,8 @@ O SMOC opera com uma arquitetura distribuída, onde múltiplos ESP32s desempenha
 4. ESP32LoRaRxTx (Receptor LoRa para MQTT): Recebe os dados agregados via LoRaWAN e os publica no broker MQTT via Wi-Fi.
 5. Backend (Flask, MQTT, SQLite): Hospedado em um Raspberry Pi (ou similar), consome os dados MQTT, armazena-os no SQLite e provê uma interface web.
 6. CONTROLCOMP (Controlador de Compressores): Atualmente, um ESP32 que contém a lógica de rodízio e controle dos compressores, recebendo os dados de pressão via Wi-FI e controlando os compressores de acordo com valor pré-determinado de pressão. Visa integrar sua lógica ao sensor de pressão.
+   <img width="1422" height="858" alt="image" src="https://github.com/user-attachments/assets/ab625fac-3196-4bae-bb71-240392bcacb6" />
+
 
 Próximas Etapas e Melhorias Planejadas
 
